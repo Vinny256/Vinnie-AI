@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables and secret keys
+.env
+*.env
+
+# Database files (SQLite/other)
+*.db
+*.sqlite3
+
+# Flask, Gunicorn logs
+*.log
+
+# Virtual environment folders
+venv/
+env/
+ENV/
+
+# OS/System files
+.DS_Store
+Thumbs.db
+
+# Migrations (optional: keep if needed in version control)
+migrations/
+
+# VSCode, PyCharm and other IDE settings
+.vscode/
+.idea/
