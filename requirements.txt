@@ -1,0 +1,9 @@
+Flask
+Flask-Login
+Flask-SQLAlchemy
+Flask-Migrate
+Flask-Babel
+python-dotenv
+Werkzeug
+google-genai
+gunicorn

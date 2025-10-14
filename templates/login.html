@@ -1,0 +1,39 @@
+<!-- templates/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log In</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Log In</h2>
+        <form method="post" id="loginForm">
+            <label for="username">Username</label>
+            <input name="username" id="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required>
+
+            <button type="submit">Log In</button>
+        </form>
+        {% if error %}
+          <div class="form-error" style="color:red;">
+            {{ error }}
+          </div>
+        {% endif %}
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul class="flashes">
+              {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+        <p>New here? <a href="{{ url_for('signup') }}">Sign Up</a></p>
+    </div>
+</body>
+</html>
