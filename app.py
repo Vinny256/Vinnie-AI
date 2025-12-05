@@ -158,7 +158,7 @@ def setup_chat_context():
     # Initialize Gemini Chat
     try:
         g.chat = client.chats.create(
-            model="gemini-2.0-flash-exp", 
+            model="gemini-1.5-flash", 
             history=history,
             config={
                 "system_instruction": get_system_instruction(),
