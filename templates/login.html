@@ -1,41 +1,116 @@
-<!-- templates/login.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Log In</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9404499937977158"
-     crossorigin="anonymous"></script>
+    <title>HACX_GPT // ACCESS</title>
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #00ff41;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            border: 2px solid #00ff41;
+            padding: 40px;
+            width: 350px;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+            position: relative;
+            background: rgba(0, 0, 0, 0.9);
+        }
+        h1 {
+            text-align: center;
+            text-shadow: 0 0 5px #00ff41;
+            margin-bottom: 30px;
+        }
+        input {
+            width: 100%;
+            background: #111;
+            border: 1px solid #333;
+            border-bottom: 1px solid #00ff41;
+            color: white;
+            padding: 12px;
+            font-family: inherit;
+            font-size: 16px;
+            margin-bottom: 20px;
+            outline: none;
+        }
+        input:focus { border-color: #00ff41; background: #001100; }
+        
+        button {
+            width: 100%;
+            background: #00ff41;
+            color: black;
+            border: none;
+            padding: 15px;
+            font-weight: bold;
+            font-family: inherit;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: black;
+            color: #00ff41;
+            border: 1px solid #00ff41;
+            box-shadow: 0 0 15px #00ff41;
+        }
+        
+        /* The Link Fix is here */
+        .links {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 12px;
+        }
+        a { color: #00ff41; text-decoration: none; border-bottom: 1px dotted #00ff41; }
+        a:hover { background: #00ff41; color: black; }
+        
+        .alert { color: #ff3333; text-align: center; margin-bottom: 15px; border: 1px solid #ff3333; padding: 5px; font-size: 12px; }
+    </style>
 </head>
 <body>
-    <div class="login-container">
-        <h2>Log In</h2>
-        <form method="post" id="loginForm">
-            <label for="username">Username</label>
-            <input name="username" id="username" required>
 
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" required>
-
-            <button type="submit">Log In</button>
-        </form>
-        {% if error %}
-          <div class="form-error" style="color:red;">
-            {{ error }}
-          </div>
-        {% endif %}
-        {% with messages = get_flashed_messages(with_categories=true) %}
-          {% if messages %}
-            <ul class="flashes">
-              {% for category, message in messages %}
-                <li class="{{ category }}">{{ message }}</li>
-              {% endfor %}
-            </ul>
-          {% endif %}
+    <div class="container">
+        <h1>SYSTEM_ACCESS</h1>
+        
+        <!-- Error Messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert">[!] {{ message }}</div>
+                {% endfor %}
+            {% endif %}
         {% endwith %}
-        <p>New here? <a href="{{ url_for('signup') }}">Sign Up</a></p>
+
+        <form method="POST">
+            <input type="text" name="username" placeholder="CODENAME" required autocomplete="off">
+            <input type="password" name="password" placeholder="PASSPHRASE" required>
+            <button type="submit">INITIALIZE_SESSION</button>
+        </form>
+
+        <div class="links">
+            <!-- This was the error. We changed 'signup' to 'register' -->
+            <p>NEW USER? <a href="{{ url_for('register') }}">ESTABLISH_IDENTITY</a></p>
+        </div>
     </div>
+
+    <script>
+        // UX Enhancement: Show loading state on click
+        const form = document.querySelector('form');
+        const btn = document.querySelector('button');
+
+        form.addEventListener('submit', function() {
+            btn.innerHTML = "AUTHENTICATING...";
+            btn.style.opacity = "0.7";
+            btn.style.cursor = "wait";
+        });
+    </script>
+
 </body>
 </html>
