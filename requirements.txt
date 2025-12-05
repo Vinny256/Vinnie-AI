@@ -3,7 +3,7 @@ Flask-SQLAlchemy
 Flask-Login
 Flask-Migrate
 Flask-Bcrypt
-google-generativeai
+google-generativeai>=0.8.3
 python-dotenv
 gunicorn
 werkzeug
