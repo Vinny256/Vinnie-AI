@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HACX_GPT // NEW_IDENTITY</title>
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #00ff41;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            border: 2px solid #00ff41;
+            padding: 40px;
+            width: 350px;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+            background: rgba(0, 0, 0, 0.9);
+            position: relative;
+        }
+        h1 {
+            text-align: center;
+            text-shadow: 0 0 5px #00ff41;
+            margin-bottom: 30px;
+        }
+        input {
+            width: 100%;
+            background: #111;
+            border: 1px solid #333;
+            border-bottom: 1px solid #00ff41;
+            color: white;
+            padding: 12px;
+            font-family: inherit;
+            font-size: 16px;
+            margin-bottom: 20px;
+            outline: none;
+        }
+        input:focus { border-color: #00ff41; background: #001100; }
+        
+        button {
+            width: 100%;
+            background: transparent;
+            color: #00ff41;
+            border: 1px solid #00ff41;
+            padding: 15px;
+            font-weight: bold;
+            font-family: inherit;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #00ff41;
+            color: black;
+            box-shadow: 0 0 15px #00ff41;
+        }
+        
+        .links { margin-top: 15px; text-align: center; font-size: 12px; }
+        a { color: #00ff41; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        
+        .alert { color: #ff3333; text-align: center; margin-bottom: 10px; font-size: 12px;}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>NEW_IDENTITY</h1>
+        
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert">[!] {{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST">
+            <input type="text" name="username" placeholder="SET_CODENAME" required autocomplete="off">
+            <input type="password" name="password" placeholder="SET_PASSPHRASE" required>
+            <button type="submit">CREATE_RECORD</button>
+        </form>
+
+        <div class="links">
+            <a href="{{ url_for('login') }}"><< RETURN_TO_LOGIN</a>
+        </div>
+    </div>
+
+</body>
+</html>
